@@ -79,9 +79,12 @@ export default function ComingSoon() {
             We werken hard om u iets geweldigs te brengen. Blijf op de hoogte!
           </p>
         </div>
-        
+
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="mt-8 space-y-6">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="mt-8 space-y-6"
+          >
             <FormField
               control={form.control}
               name="name"
@@ -89,7 +92,11 @@ export default function ComingSoon() {
                 <FormItem>
                   <FormLabel className="sr-only">Naam</FormLabel>
                   <FormControl>
-                    <Input placeholder="Naam" {...field} />
+                    <Input
+                      className="placeholder:text-gray-600 border-gray-600 shadow-sm"
+                      placeholder="Naam"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -103,7 +110,12 @@ export default function ComingSoon() {
                 <FormItem>
                   <FormLabel className="sr-only">E-mailadres</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="E-mailadres" {...field} />
+                    <Input
+                      className="placeholder:text-gray-600 border-gray-600 shadow-sm"
+                      type="email"
+                      placeholder="E-mailadres"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -117,10 +129,11 @@ export default function ComingSoon() {
                 <FormItem>
                   <FormLabel className="sr-only">Bericht</FormLabel>
                   <FormControl>
-                    <Textarea 
-                      placeholder="Uw bericht" 
+                    <Textarea
+                      className="placeholder:text-gray-600 border-gray-600 shadow-sm"
+                      placeholder="Uw bericht"
                       rows={4}
-                      {...field} 
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />
@@ -128,17 +141,14 @@ export default function ComingSoon() {
               )}
             />
 
-            <Button
-              type="submit"
-              disabled={isPending}
-              className="w-full"
-            >
+            <Button type="submit" disabled={isPending} className="w-full">
               {isPending ? 'Verzenden...' : 'Verstuur bericht'}
             </Button>
 
             {isSubmitted && (
               <div className="text-center text-sm text-green-600 mt-4">
-                Bedankt voor uw bericht! We nemen zo spoedig mogelijk contact met u op.
+                Bedankt voor uw bericht! We nemen zo spoedig mogelijk contact
+                met u op.
               </div>
             )}
           </form>
