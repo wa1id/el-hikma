@@ -70,9 +70,9 @@ export default function ComingSoon() {
   }
 
   return (
-    <div className="min-h-screen relative flex flex-col items-center md:justify-center justify-end p-4 bg-gray-300">
+    <div className="min-h-screen relative flex flex-col items-center md:justify-center justify-end p-4">
       <Image src="/image-4.png" alt="" fill className="object-cover" priority />
-      <div className="relative z-10 max-w-md w-full space-y-8 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm p-6 rounded-xl shadow-lg md:translate-y-0 translate-y-0">
+      <div className="relative z-10 max-w-md w-full space-y-8 bg-white bg-opacity-65 backdrop-filter backdrop-blur-sm p-6 rounded-xl shadow-lg md:translate-y-0 translate-y-0">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900">Contacteer ons</h1>
           <p className="mt-2 text-gray-600">
