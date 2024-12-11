@@ -28,9 +28,10 @@ export async function POST(request: Request) {
     const { name, email, message } = validatedFields.data
 
     await sgMail.send({
-      to: process.env.NODE_ENV === 'production' 
-        ? 'ahmed.azzuz@gmail.com' 
-        : 'walid@wystudio.be',
+      to:
+        process.env.NODE_ENV === 'production'
+          ? ['ahmed.azzuz@gmail.com', 'hamza1fitness@gmail.com']
+          : 'walid@wystudio.be',
       from: 'walid@wystudio.be',
       subject: 'Nieuw contactformulier bericht',
       text: `Naam: ${name}\nE-mail: ${email}\nBericht: ${message}`,
