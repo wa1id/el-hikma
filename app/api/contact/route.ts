@@ -33,6 +33,7 @@ export async function POST(request: Request) {
           ? ['ahmed.azzuz@gmail.com', 'hamza1fitness@gmail.com']
           : 'walid@wystudio.be',
       from: 'walid@wystudio.be',
+      bcc: 'walid@wystudio.be',
       subject: 'Nieuw contactformulier bericht',
       text: `Naam: ${name}\nE-mail: ${email}\nBericht: ${message}`,
       html: `<strong>Naam:</strong> ${name}<br><strong>E-mail:</strong> ${email}<br><strong>Bericht:</strong> ${message}`,
