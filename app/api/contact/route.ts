@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import sgMail from '@sendgrid/mail'
+import { headers } from 'next/headers'
 
 // Initialize SendGrid with your API key
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
@@ -12,6 +13,9 @@ const schema = z.object({
 
 export async function POST(request: Request) {
   try {
+    const headersList = await headers()
+    const domain = headersList.get('host') || ''
+
     const body = await request.json()
     const validatedFields = schema.safeParse(body)
 
@@ -27,13 +31,29 @@ export async function POST(request: Request) {
 
     const { name, email, message } = validatedFields.data
 
+    const getRecipientEmails = (domain: string): string[] => {
+      if (process.env.NODE_ENV !== 'production') {
+        return ['walid@wystudio.be']
+      }
+
+      if (domain.includes('elhikma')) {
+        return ['elhikma2060@hotmail.com']
+      }
+
+      return ['ahmed.azzuz@gmail.com', 'hamza1fitness@gmail.com']
+    }
+
+    console.log(domain.includes('localhost'))
+    console.log(domain)
+    console.log(getRecipientEmails(domain))
+
     await sgMail.send({
       to:
         process.env.NODE_ENV === 'production'
-          ? ['ahmed.azzuz@gmail.com', 'hamza1fitness@gmail.com']
+          ? getRecipientEmails(domain)
           : 'walid@wystudio.be',
       from: 'walid@wystudio.be',
-      bcc: 'walid@wystudio.be',
+      bcc: 'info@wystudio.be',
       subject: 'Nieuw contactformulier bericht',
       text: `Naam: ${name}\nE-mail: ${email}\nBericht: ${message}`,
       html: `<strong>Naam:</strong> ${name}<br><strong>E-mail:</strong> ${email}<br><strong>Bericht:</strong> ${message}`,
