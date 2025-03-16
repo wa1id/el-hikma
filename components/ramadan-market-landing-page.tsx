@@ -9,19 +9,23 @@ import { Button } from "./ui/button";
 
 const RamadanMarketLandingPage = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-5xl font-bold text-secondary">
-        Ramadan <br /> Markt
-      </h1>
-      <Star>€12,50 per ticket</Star>
-      <p className="max-w-[580px] text-xl font-semibold text-secondary">
-        Kom genieten van een sfeervolle markt vol lekker eten, ambachtelijkse
-        producten en culturele beleving. Ontdek unieke kraampjes, proef
-        authentieke gerechten en ervaar de magie van Ramadan met familie en
-        vrienden.
-      </p>
-      <Button className="w-fit">Reserveer uw plaats</Button>
-      <EventInfoCards />
+    <div className="flex min-h-screen flex-col space-y-12 bg-[#F8F5E6]">
+      <div className="conatiner mx-auto space-y-12">
+        <div className="flex w-[700px] items-center justify-between">
+          <h1 className="text-5xl font-bold text-secondary">
+            Ramadan <br /> Markt
+          </h1>
+          <Star>€12,50 per ticket</Star>
+        </div>
+        <p className="max-w-[580px] text-xl font-semibold text-secondary">
+          Kom genieten van een sfeervolle markt vol lekker eten, ambachtelijkse
+          producten en culturele beleving. Ontdek unieke kraampjes, proef
+          authentieke gerechten en ervaar de magie van Ramadan met familie en
+          vrienden.
+        </p>
+        <Button className="w-fit">Reserveer uw plaats</Button>
+        <EventInfoCards />
+      </div>
       <RamadanMarketMarquee />
     </div>
   );
