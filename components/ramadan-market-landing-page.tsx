@@ -1,6 +1,7 @@
 import { MapPinIcon } from "@heroicons/react/20/solid";
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import Marquee from "react-fast-marquee";
 
 import InfoCard from "./info-card";
 import Star from "./star";
@@ -21,6 +22,7 @@ const RamadanMarketLandingPage = () => {
       </p>
       <Button className="w-fit">Reserveer uw plaats</Button>
       <EventInfoCards />
+      <RamadanMarketMarquee />
     </div>
   );
 };
@@ -40,6 +42,20 @@ const EventInfoCards = () => {
         16:00 - 22:00
       </InfoCard>
     </div>
+  );
+};
+
+const RamadanMarketMarquee = () => {
+  return (
+    <Marquee speed={25} className="bg-primary py-3">
+      <div className="flex items-center gap-12">
+        {Array.from({ length: 10 }).map((_, index) => (
+          <span key={index} className="text-xl font-semibold text-secondary">
+            • 12,50 euro per ticket
+          </span>
+        ))}
+      </div>
+    </Marquee>
   );
 };
 
