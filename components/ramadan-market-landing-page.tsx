@@ -25,7 +25,16 @@ const RamadanMarketLandingPage = () => {
         </p>
         <div className="flex">
           <Button className="w-fit">Reserveer uw plaats</Button>
-          <Button variant="link" className="text-secondary underline">
+          <Button
+            variant="link"
+            className="text-secondary underline"
+            data-tally-open="w5MLZN"
+            data-tally-layout="modal"
+            data-tally-width="500"
+            data-tally-emoji-text="👋"
+            data-tally-emoji-animation="wave"
+            data-tally-auto-close="0"
+          >
             Inschrijven als vrijwilliger
           </Button>
         </div>
