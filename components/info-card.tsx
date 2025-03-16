@@ -22,7 +22,7 @@ const InfoCard = ({ icon, children, className }: InfoCardProps) => {
   return (
     <div
       className={cn(
-        "gradient-secondary flex items-center gap-5 rounded-2xl p-6 text-xl",
+        "gradient-secondary flex items-center gap-5 rounded-2xl p-6 text-xl drop-shadow-lg",
         className,
       )}
     >
