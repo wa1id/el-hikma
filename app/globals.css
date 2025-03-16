@@ -5,3 +5,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-secondary/90 via-secondary to-secondary/90;
+}
