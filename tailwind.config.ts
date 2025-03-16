@@ -17,7 +17,7 @@ export default {
         },
         secondary: {
           light: "#5A4FB3",
-          DEFAULT: "#34287D",
+          DEFAULT: "#33277d",
           dark: "#221A54",
         },
         beige: {
