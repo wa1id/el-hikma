@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import { Berkshire_Swash } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
 import { Toaster } from "sonner";
@@ -14,6 +15,12 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const berkshireSwash = Berkshire_Swash({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-berkshire-swash",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +40,7 @@ export default function RootLayout({
         <Script src="https://tally.so/widgets/embed.js" async />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${berkshireSwash.variable} antialiased`}
       >
         {children}
         <Toaster richColors />

@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "berkshire-swash": ["var(--font-berkshire-swash)"],
+      },
       colors: {
         primary: {
           light: "#F5B1CC",

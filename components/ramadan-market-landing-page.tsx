@@ -12,7 +12,7 @@ const RamadanMarketLandingPage = () => {
     <div className="bg-beige flex min-h-screen flex-col space-y-12">
       <div className="conatiner mx-auto space-y-12">
         <div className="flex w-[700px] items-center justify-between">
-          <h1 className="text-5xl font-bold text-secondary">
+          <h1 className="font-berkshire-swash text-7xl font-bold text-secondary">
             Ramadan <br /> Markt
           </h1>
           <Star>€12,50 per ticket</Star>
