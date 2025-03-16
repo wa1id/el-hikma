@@ -23,7 +23,12 @@ const RamadanMarketLandingPage = () => {
           authentieke gerechten en ervaar de magie van Ramadan met familie en
           vrienden.
         </p>
-        <Button className="w-fit">Reserveer uw plaats</Button>
+        <div className="flex">
+          <Button className="w-fit">Reserveer uw plaats</Button>
+          <Button variant="link" className="text-secondary underline">
+            Inschrijven als vrijwilliger
+          </Button>
+        </div>
         <EventInfoCards />
       </div>
       <RamadanMarketMarquee />
