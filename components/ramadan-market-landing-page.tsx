@@ -3,12 +3,16 @@ import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
 import InfoCard from "./info-card";
+import Star from "./star";
 import { Button } from "./ui/button";
 
 const RamadanMarketLandingPage = () => {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-4xl font-bold text-secondary">Ramadan Markt</h1>
+      <h1 className="text-5xl font-bold text-secondary">
+        Ramadan <br /> Markt
+      </h1>
+      <Star>€12,50 per ticket</Star>
       <p className="max-w-[580px] text-xl font-semibold text-secondary">
         Kom genieten van een sfeervolle markt vol lekker eten, ambachtelijkse
         producten en culturele beleving. Ontdek unieke kraampjes, proef
