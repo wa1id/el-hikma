@@ -2,5 +2,7 @@
   "singleQuote": false,
   "semi": true,
   "tabWidth": 2,
-  "useTabs": false
+  "useTabs": false,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["twJoin", "twMerge"]
 }
