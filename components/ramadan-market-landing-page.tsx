@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 
 const RamadanMarketLandingPage = () => {
   return (
-    <div className="flex min-h-screen flex-col space-y-12 bg-[#F8F5E6]">
+    <div className="bg-beige flex min-h-screen flex-col space-y-12">
       <div className="conatiner mx-auto space-y-12">
         <div className="flex w-[700px] items-center justify-between">
           <h1 className="text-5xl font-bold text-secondary">
