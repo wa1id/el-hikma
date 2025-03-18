@@ -48,7 +48,7 @@ const RamadanMarketLandingPage = () => {
               <Star
                 className="self-end sm:self-auto"
                 size={170}
-                textClassName="leading-normal  font-extrabold sm:text-[24px] lg:font-extrabold lg:text-[24px]"
+                textClassName="leading-normal  font-extrabold text-[24px] lg:font-extrabold"
               >
                 Gratis <br /> Inkom
               </Star>
