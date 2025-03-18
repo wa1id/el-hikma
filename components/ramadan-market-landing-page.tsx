@@ -1,11 +1,11 @@
 import { MapPinIcon } from "@heroicons/react/20/solid";
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import React from "react";
-import Marquee from "react-fast-marquee";
 
 import InfoCard from "./info-card";
 import Star from "./star";
 import { Button } from "./ui/button";
+// import Marquee from "react-fast-marquee";
 
 const RamadanMarketLandingPage = () => {
   return (
@@ -50,7 +50,7 @@ const RamadanMarketLandingPage = () => {
                 size={170}
                 textClassName="leading-normal  font-extrabold sm:text-[24px] lg:font-extrabold lg:text-[24px]"
               >
-                €12,50 per ticket
+                €12,50 Gratis Inkom
               </Star>
             </div>
             <p className="mx-auto text-lg font-semibold text-secondary sm:text-xl lg:mx-0">
@@ -60,8 +60,16 @@ const RamadanMarketLandingPage = () => {
               Ramadan met familie en vrienden.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
-              <Button className="w-full sm:w-auto">Reserveer uw plaats</Button>
-              {/* <Button
+              <Button className="w-full sm:w-auto">
+                <a
+                  href="https://www.eventbrite.be/e/ramadan-markt-2060-tickets-1278040987999"
+                  rel="noopener noreferrer"
+                  className="flex h-full w-full items-center justify-center"
+                >
+                  Reserveer uw plaats
+                </a>
+              </Button>
+              <Button
                 variant="link"
                 className="text-secondary underline"
                 data-tally-open="w5MLZN"
@@ -72,7 +80,7 @@ const RamadanMarketLandingPage = () => {
                 data-tally-auto-close="0"
               >
                 Inschrijven als vrijwilliger
-              </Button> */}
+              </Button>
             </div>
             <EventInfoCards />
           </div>
@@ -87,7 +95,7 @@ const RamadanMarketLandingPage = () => {
         </div>
       </div>
 
-      <RamadanMarketMarquee />
+      {/* <RamadanMarketMarquee /> */}
     </div>
   );
 };
@@ -116,21 +124,21 @@ const EventInfoCards = () => {
   );
 };
 
-const RamadanMarketMarquee = () => {
-  return (
-    <Marquee speed={25} className="mt-14 bg-primary py-2 sm:py-3">
-      <div className="flex items-center gap-8 sm:gap-12">
-        {Array.from({ length: 10 }).map((_, index) => (
-          <span
-            key={index}
-            className="text-lg font-semibold text-secondary sm:text-xl"
-          >
-            • 12,50 euro per ticket
-          </span>
-        ))}
-      </div>
-    </Marquee>
-  );
-};
+// const RamadanMarketMarquee = () => {
+//   return (
+//     <Marquee speed={25} className="mt-14 bg-primary py-2 sm:py-3">
+//       <div className="flex items-center gap-8 sm:gap-12">
+//         {Array.from({ length: 10 }).map((_, index) => (
+//           <span
+//             key={index}
+//             className="text-lg font-semibold text-secondary sm:text-xl"
+//           >
+//             • 12,50 euro per ticket
+//           </span>
+//         ))}
+//       </div>
+//     </Marquee>
+//   );
+// };
 
 export default RamadanMarketLandingPage;
