@@ -1,12 +1,12 @@
-import { Metadata } from 'next'
+import { Metadata } from "next";
 
-import ComingSoon from '@/components/coming-soon'
+import RamadanMarketLandingPage from "@/components/ramadan-market-landing-page";
 
-export const metadata: Metadata = {
-  title: 'Coming Soon',
-  description: 'Onze website komt binnenkort. Blijf op de hoogte!',
-}
+// export const metadata: Metadata = {
+//   title: "Coming Soon",
+//   description: "Onze website komt binnenkort. Blijf op de hoogte!",
+// };
 
 export default function Home() {
-  return <ComingSoon />
+  return <RamadanMarketLandingPage />;
 }
