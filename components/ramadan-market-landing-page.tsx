@@ -50,7 +50,7 @@ const RamadanMarketLandingPage = () => {
                 size={170}
                 textClassName="leading-normal  font-extrabold sm:text-[24px] lg:font-extrabold lg:text-[24px]"
               >
-                Gratis Inkom
+                Gratis <br /> Inkom
               </Star>
             </div>
             <p className="mx-auto text-lg font-semibold text-secondary sm:text-xl lg:mx-0">
