@@ -116,6 +116,7 @@ const Star: React.FC<StarProps> = ({
         >
           <div
             style={{
+              lineHeight: "1.2",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
