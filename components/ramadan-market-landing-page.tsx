@@ -107,7 +107,7 @@ const EventInfoCards = () => {
         className="flex h-full w-full items-center text-base sm:w-auto sm:text-lg"
         icon={<MapPinIcon className="size-8 sm:size-10" />}
       >
-        Pesthofstraat 35, 2060 Antwerpen
+        Pesthofstraat 45, 2060 Antwerpen
         <br />
         (Stuivenbergsite)
       </InfoCard>
