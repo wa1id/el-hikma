@@ -1,5 +1,7 @@
+"use client"
+
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
-import React from "react";
+import React, { useState } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
@@ -98,43 +100,89 @@ const program: DaySchedule[] = [
 ];
 
 const Program = () => {
+  const [selectedDate, setSelectedDate] = useState(program[0].date);
+  
+  // Handle the mobile select change
+  const handleMobileSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedDate(e.target.value);
+  };
+
   return (
     <div className="space-y-8">
       <div className="flex items-center gap-2">
         <CalendarDaysIcon className="size-6 text-secondary" />
         <h2 className="font-berkshire-swash text-4xl text-secondary">Programma</h2>
       </div>
-      <Tabs defaultValue={program[0].date} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 gap-1 rounded-lg bg-white p-1 shadow-sm sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
-          {program.map((day, index) => {
-            const [, date, month] = day.date.split(" ");
-            return (
-              <TabsTrigger
-                key={index}
-                value={day.date}
-                className="whitespace-normal rounded-md text-xs font-medium text-secondary transition-colors hover:bg-primary/10 sm:text-sm"
-              >
-                {date} {month}
-              </TabsTrigger>
-            );
-          })}
-        </TabsList>
-        {program.map((day, index) => (
-          <TabsContent key={index} value={day.date}>
-            <div className="rounded-lg bg-white p-6 shadow-sm">
-              <h3 className="mb-4 font-berkshire-swash text-2xl text-secondary">{day.date}</h3>
-              <div className="space-y-3">
-                {day.events.map((event, eventIndex) => (
-                  <div key={eventIndex} className="flex items-start gap-4">
-                    <span className="min-w-[100px] font-semibold text-secondary">{event.time}</span>
-                    <span className="text-gray-700">{event.title}</span>
-                  </div>
-                ))}
+      
+      {/* Desktop view - only visible on sm and up */}
+      <div className="hidden sm:block">
+        <Tabs defaultValue={program[0].date} className="w-full">
+          <TabsList className="grid w-full grid-cols-3 gap-1 rounded-lg bg-white p-1 shadow-sm md:grid-cols-5 lg:grid-cols-10">
+            {program.map((day, index) => {
+              const [, date, month] = day.date.split(" ");
+              return (
+                <TabsTrigger
+                  key={index}
+                  value={day.date}
+                  className="whitespace-normal rounded-md text-xs font-medium text-secondary transition-colors hover:bg-primary/10 sm:text-sm"
+                >
+                  {date} {month}
+                </TabsTrigger>
+              );
+            })}
+          </TabsList>
+          {program.map((day, index) => (
+            <TabsContent key={index} value={day.date}>
+              <div className="rounded-lg bg-white p-6 shadow-sm">
+                <h3 className="mb-4 font-berkshire-swash text-2xl text-secondary">{day.date}</h3>
+                <div className="space-y-3">
+                  {day.events.map((event, eventIndex) => (
+                    <div key={eventIndex} className="flex items-start gap-4">
+                      <span className="min-w-[100px] font-semibold text-secondary">{event.time}</span>
+                      <span className="text-gray-700">{event.title}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </TabsContent>
-        ))}
-      </Tabs>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+      
+      {/* Mobile view - only visible below sm breakpoint */}
+      <div className="sm:hidden">
+        <div className="mb-4">
+          <select 
+            value={selectedDate}
+            onChange={handleMobileSelectChange}
+            className="w-full rounded-lg border border-gray-300 bg-white p-3 text-secondary shadow-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          >
+            {program.map((day, index) => (
+              <option key={index} value={day.date}>
+                {day.date}
+              </option>
+            ))}
+          </select>
+        </div>
+        
+        <div className="rounded-lg bg-white p-6 shadow-sm">
+          {program
+            .filter(day => day.date === selectedDate)
+            .map((day, index) => (
+              <div key={index}>
+                <h3 className="mb-4 font-berkshire-swash text-2xl text-secondary">{day.date}</h3>
+                <div className="space-y-4">
+                  {day.events.map((event, eventIndex) => (
+                    <div key={eventIndex} className="border-b border-gray-100 pb-3 last:border-0">
+                      <p className="font-semibold text-secondary mb-1">{event.time}</p>
+                      <p className="text-gray-700">{event.title}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 };
