@@ -105,14 +105,14 @@ const Program = () => {
         <h2 className="font-berkshire-swash text-4xl text-secondary">Programma</h2>
       </div>
       <Tabs defaultValue={program[0].date} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
+        <TabsList className="grid w-full grid-cols-2 gap-1 rounded-lg bg-white p-1 shadow-sm sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
           {program.map((day, index) => {
             const [, date, month] = day.date.split(" ");
             return (
               <TabsTrigger
                 key={index}
                 value={day.date}
-                className="whitespace-normal text-xs sm:text-sm"
+                className="whitespace-normal rounded-md text-xs font-medium text-secondary transition-colors hover:bg-primary/10 sm:text-sm"
               >
                 {date} {month}
               </TabsTrigger>
