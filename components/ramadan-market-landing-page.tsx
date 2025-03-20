@@ -88,7 +88,7 @@ const RamadanMarketLandingPage = () => {
 
           <div className="flex w-full justify-center lg:w-2/5">
             <img
-              className="h-auto w-[110%] max-w-[750px] sm:w-[85%] md:w-[400px] lg:w-[400px] xl:w-[550px]"
+              className="hidden xl:block h-auto w-[110%] max-w-[750px] sm:w-[85%] md:w-[400px] lg:w-[400px] xl:w-[550px]"
               src="./Group.png"
               alt="Ramadan Market"
             />
