@@ -140,7 +140,7 @@ const Program = () => {
       </div>
       
       {/* Desktop view - only visible on sm and up */}
-      <div className="hidden sm:block">
+      <div className="hidden lg:block">
         <Tabs defaultValue={closestDate} className="w-full">
           <TabsList className="grid w-full grid-cols-3 gap-1 rounded-lg bg-white p-1 shadow-sm md:grid-cols-5 lg:grid-cols-10">
             {program.map((day, index) => {
@@ -175,7 +175,7 @@ const Program = () => {
       </div>
       
       {/* Mobile view - only visible below sm breakpoint */}
-      <div className="sm:hidden">
+      <div className="lg:hidden">
         <div className="mb-4">
           <select 
             value={selectedDate}
