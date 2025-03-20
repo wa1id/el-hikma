@@ -3,6 +3,7 @@ import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
 import InfoCard from "./info-card";
+import Program from "./program";
 import Star from "./star";
 import { Button } from "./ui/button";
 // import Marquee from "react-fast-marquee";
@@ -92,7 +93,12 @@ const RamadanMarketLandingPage = () => {
               alt="Ramadan Market"
             />
           </div>
+
+
         </div>
+        <div className="container mx-auto flex flex-col items-center justify-between gap-12 px-6 lg:flex-row lg:px-24">
+            <Program />
+          </div>
       </div>
 
       {/* <RamadanMarketMarquee /> */}
