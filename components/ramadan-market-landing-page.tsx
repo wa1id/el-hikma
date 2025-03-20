@@ -66,7 +66,7 @@ const RamadanMarketLandingPage = () => {
                   rel="noopener noreferrer"
                   className="flex h-full w-full items-center justify-center"
                 >
-                  Reserveer uw plaats
+                  Reserveer of doneer een iftar
                 </a>
               </Button>
               <Button
