@@ -61,7 +61,7 @@ const RamadanMarketLandingPage = () => {
               Ramadan met familie en vrienden.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
-              <Button className="w-full sm:w-auto">
+              <Button className="w-full sm:w-auto" data-umami-event="iftar-reservation-button">
                 <a
                   href="https://www.eventbrite.be/e/ramadan-markt-2060-tickets-1278040987999"
                   rel="noopener noreferrer"
@@ -79,6 +79,7 @@ const RamadanMarketLandingPage = () => {
                 data-tally-emoji-text="👋"
                 data-tally-emoji-animation="wave"
                 data-tally-auto-close="0"
+                data-umami-event="volunteer-signup-button"
               >
                 Inschrijven als vrijwilliger
               </Button>

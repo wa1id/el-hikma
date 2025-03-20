@@ -40,6 +40,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script src="https://tally.so/widgets/embed.js" async />
+        <script
+          defer
+          src="/js/script.js"
+          data-website-id="2393f2f8-bf8a-4703-be58-c3a890230e48"
+          data-domains="elhikma2060.be,www.elhikma2060.be"
+        ></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${berkshireSwash.variable} antialiased`}
