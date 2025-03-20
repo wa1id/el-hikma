@@ -1,7 +1,8 @@
 "use client"
 
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
-import React, { useState } from "react";
+import { compareAsc, parse } from "date-fns";
+import React, { useMemo, useState } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
@@ -100,7 +101,31 @@ const program: DaySchedule[] = [
 ];
 
 const Program = () => {
-  const [selectedDate, setSelectedDate] = useState(program[0].date);
+  // Find the closest date to today
+  const closestDate = useMemo(() => {
+    const today = new Date();
+    
+    // Convert program dates to Date objects
+    const programDates = program.map(day => {
+      // Parse the Dutch date format "Vrijdag 21 maart 2025" to Date object
+      return {
+        dateString: day.date,
+        dateObj: parse(day.date.split(" ").slice(1).join(" "), "d MMMM yyyy", new Date())
+      };
+    });
+    
+    // Sort dates by closeness to today
+    programDates.sort((a, b) => {
+      const diffA = Math.abs(compareAsc(a.dateObj, today));
+      const diffB = Math.abs(compareAsc(b.dateObj, today));
+      return diffA - diffB;
+    });
+    
+    // Return the closest date string
+    return programDates[0]?.dateString || program[0].date;
+  }, []);
+  
+  const [selectedDate, setSelectedDate] = useState(closestDate);
   
   // Handle the mobile select change
   const handleMobileSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -116,7 +141,7 @@ const Program = () => {
       
       {/* Desktop view - only visible on sm and up */}
       <div className="hidden sm:block">
-        <Tabs defaultValue={program[0].date} className="w-full">
+        <Tabs defaultValue={closestDate} className="w-full">
           <TabsList className="grid w-full grid-cols-3 gap-1 rounded-lg bg-white p-1 shadow-sm md:grid-cols-5 lg:grid-cols-10">
             {program.map((day, index) => {
               const [, date, month] = day.date.split(" ");
