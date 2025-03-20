@@ -6,6 +6,8 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import { Toaster } from "sonner";
 
+import Footer from "@/components/footer";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -43,6 +45,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${berkshireSwash.variable} antialiased`}
       >
         {children}
+        <Footer />
         <Toaster richColors />
       </body>
     </html>
