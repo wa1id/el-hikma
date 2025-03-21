@@ -1,9 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import bancontact from '@/public/payment-logos/bancontact.svg';
+import ideal from '@/public/payment-logos/ideal.svg';
 
 const PaymentMethodCard = ({ 
   name, 
@@ -12,7 +15,7 @@ const PaymentMethodCard = ({
   onClick 
 }: { 
   name: string; 
-  icon: string; 
+  icon?: string;
   selected: boolean; 
   onClick: () => void 
 }) => (
@@ -22,7 +25,33 @@ const PaymentMethodCard = ({
       selected ? 'bg-primary/10 border-2 border-primary' : 'bg-white border border-gray-200 hover:shadow-md'
     }`}
   >
-    <div className="text-4xl mb-2">{icon}</div>
+    {name === 'Bancontact' && (
+      <div className="h-12 w-32 relative mb-2">
+        <Image 
+          src={bancontact} 
+          alt=''
+          fill 
+          sizes="128px"
+        className="object-contain" 
+      />
+        </div>
+    )}
+    {name === 'iDEAL' && (
+      <div className="h-12 w-32 relative mb-2">
+        <Image 
+          src={ideal} 
+          alt=''
+          fill 
+          sizes="128px"
+          className="object-contain" 
+        />
+      </div>
+    )}
+    {name === 'VISA / Mastercard' && (
+      <div className="text-4xl mb-2">
+        {icon}
+      </div>
+    )}
     <h3 className="font-semibold text-secondary">{name}</h3>
   </div>
 );
@@ -131,19 +160,17 @@ export default function PayPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <PaymentMethodCard 
                 name="Bancontact" 
-                icon="💳" 
                 selected={selectedMethod === 'bancontact'}
                 onClick={() => setSelectedMethod('bancontact')}
               />
               <PaymentMethodCard 
                 name="iDEAL" 
-                icon="🏦" 
                 selected={selectedMethod === 'ideal'}
                 onClick={() => setSelectedMethod('ideal')}
               />
               <PaymentMethodCard 
                 name="VISA / Mastercard" 
-                icon="💳" 
+                icon="💳"
                 selected={selectedMethod === 'creditcard'}
                 onClick={() => setSelectedMethod('creditcard')}
               />
