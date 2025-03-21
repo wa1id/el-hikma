@@ -119,9 +119,6 @@ export default function PayPage() {
               {tickets && (
                 <p>Aantal tickets: {tickets}</p>
               )}
-              {submissionId && (
-                <p>Bestelling: {submissionId}</p>
-              )}
               {email && (
                 <p>Email: {email}</p>
               )}
