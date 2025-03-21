@@ -43,7 +43,7 @@ export async function POST(request: Request) {
       paymentMethodTypes = ['card', 'bancontact', 'ideal'];
     }
 
-    const domain = process.env.NEXT_PUBLIC_DOMAIN || 'http://localhost:3000';
+    const domain = 'https://' + (process.env.VERCEL_URL || 'localhost:3000');
     
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
