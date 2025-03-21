@@ -83,6 +83,19 @@ const RamadanMarketLandingPage = () => {
               >
                 Inschrijven als vrijwilliger
               </Button>
+              <Button
+                variant="link"
+                className="text-secondary underline"
+                data-tally-open="mOkWlg"
+                data-tally-layout="modal"
+                data-tally-width="500"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                data-tally-auto-close="0"
+                data-umami-event="volunteer-signup-button"
+              >
+                Contacteer ons
+              </Button>
             </div>
             <EventInfoCards />
           </div>
