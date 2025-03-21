@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import {  NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
 // Initialize Stripe with API key
@@ -8,11 +8,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // Await params before accessing its properties
-    const { id } = await params;
+    const {id} = await params
 
     if (!id) {
       return NextResponse.json(
