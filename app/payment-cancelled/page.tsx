@@ -78,9 +78,6 @@ export default function PaymentCancelledPage() {
             <Link href={returnUrl} passHref>
               <Button>Opnieuw proberen</Button>
             </Link>
-            <Link href="/" passHref>
-              <Button variant="outline">Terug naar de homepage</Button>
-            </Link>
           </div>
         </div>
       </div>
