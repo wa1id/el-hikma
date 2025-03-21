@@ -3,6 +3,7 @@ import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import React from "react";
 
 import InfoCard from "./info-card";
+import Program from "./program";
 import Star from "./star";
 import { Button } from "./ui/button";
 // import Marquee from "react-fast-marquee";
@@ -60,7 +61,7 @@ const RamadanMarketLandingPage = () => {
               Ramadan met familie en vrienden.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
-              <Button className="w-full sm:w-auto">
+              <Button className="w-full sm:w-auto" data-umami-event="iftar-reservation-button">
                 <a
                   href="https://www.eventbrite.be/e/ramadan-markt-2060-tickets-1278040987999"
                   rel="noopener noreferrer"
@@ -78,6 +79,7 @@ const RamadanMarketLandingPage = () => {
                 data-tally-emoji-text="👋"
                 data-tally-emoji-animation="wave"
                 data-tally-auto-close="0"
+                data-umami-event="volunteer-signup-button"
               >
                 Inschrijven als vrijwilliger
               </Button>
@@ -87,12 +89,17 @@ const RamadanMarketLandingPage = () => {
 
           <div className="flex w-full justify-center lg:w-2/5">
             <img
-              className="h-auto w-[110%] max-w-[750px] sm:w-[85%] md:w-[400px] lg:w-[400px] xl:w-[550px]"
+              className="hidden xl:block h-auto w-[110%] max-w-[750px] sm:w-[85%] md:w-[400px] lg:w-[400px] xl:w-[550px]"
               src="./Group.png"
               alt="Ramadan Market"
             />
           </div>
+
+
         </div>
+        <div className="container mx-auto flex flex-col items-center justify-between gap-12 px-6 lg:flex-row lg:px-24">
+            <Program />
+          </div>
       </div>
 
       {/* <RamadanMarketMarquee /> */}
