@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense,useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import bancontact from '@/public/payment-logos/bancontact.svg';
@@ -56,7 +56,7 @@ const PaymentMethodCard = ({
   </div>
 );
 
-export default function PayPage() {
+function PayContent() {
   const searchParams = useSearchParams();
   const tickets = searchParams.get('tickets') || '1';
   const submissionId = searchParams.get('submissionId') || '';
@@ -189,5 +189,20 @@ export default function PayPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PayPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-beige flex items-center justify-center">
+        <div className="p-8 bg-white rounded-xl shadow-lg">
+          <h1 className="text-2xl font-bold text-primary mb-4 text-center">Laden...</h1>
+          <p className="text-gray-600">Een moment geduld alstublieft.</p>
+        </div>
+      </div>
+    }>
+      <PayContent />
+    </Suspense>
   );
 } 
