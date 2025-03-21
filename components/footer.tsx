@@ -1,3 +1,5 @@
+import { Button } from "./ui/button";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -7,6 +9,19 @@ const Footer = () => {
         <p>
           © {currentYear} ElHikma - DeWijsheid - 2060 vzw. Alle rechten voorbehouden.
         </p>
+        <Button
+                variant="link"
+                className="text-secondary underline"
+                data-tally-open="mOkWlg"
+                data-tally-layout="modal"
+                data-tally-width="500"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                data-tally-auto-close="0"
+                data-umami-event="volunteer-signup-button"
+              >
+                Contacteer ons
+              </Button>
         <p className="mt-1">
           Website gemaakt door{" "}
           <a 
