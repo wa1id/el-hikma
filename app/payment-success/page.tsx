@@ -135,12 +135,24 @@ export default function PaymentSuccessPage() {
             )}
           </div>
 
-          <div className="space-y-4">
+          <div>
             <p className="text-secondary">
               We hebben een bevestiging naar je e-mail gestuurd.
             </p>
             <p className="text-secondary">
-              Als je vragen hebt, neem gerust contact met ons op.
+              Als je vragen hebt, <Button
+                variant="link"
+                className="p-0 text-secondary underline"
+                data-tally-open="mOkWlg"
+                data-tally-layout="modal"
+                data-tally-width="500"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                data-tally-auto-close="0"
+                data-umami-event="contact-button"
+              >
+                neem gerust contact met ons op
+              </Button>.
             </p>
           </div>
 

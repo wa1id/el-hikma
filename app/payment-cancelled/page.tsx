@@ -65,12 +65,27 @@ export default function PaymentCancelledPage() {
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div>
             <p className="text-secondary">
               Er is geen bedrag van je rekening afgeschreven.
             </p>
             <p className="text-secondary">
               Je kunt het opnieuw proberen of later terugkomen.
+            </p>
+            <p className="text-secondary">
+              Als je vragen hebt, <Button
+                variant="link"
+                className="p-0 text-secondary underline"
+                data-tally-open="mOkWlg"
+                data-tally-layout="modal"
+                data-tally-width="500"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                data-tally-auto-close="0"
+                data-umami-event="contact-button"
+              >
+                neem gerust contact met ons op
+              </Button>.
             </p>
           </div>
 
