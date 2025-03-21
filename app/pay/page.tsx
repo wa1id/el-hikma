@@ -40,6 +40,7 @@ export default function PayPage() {
   // Calculate price based on number of tickets
   const ticketPrice = 12.50;
   const totalPrice = (parseInt(tickets) * ticketPrice).toFixed(2);
+  const formattedPrice = new Intl.NumberFormat('nl-BE', { style: 'currency', currency: 'EUR' }).format(parseFloat(totalPrice));
 
   useEffect(() => {
     // Validate that we have both tickets and submissionId
@@ -111,7 +112,7 @@ export default function PayPage() {
           
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-berkshire-swash text-secondary mb-2">Te betalen bedrag</h2>
-            <p className="text-4xl font-bold text-primary">€{totalPrice}</p>
+            <p className="text-4xl font-bold text-primary">{formattedPrice}</p>
             <div className="mt-4 space-y-1 text-sm text-gray-500">
               {type && (
                 <p>Type: {type}</p>
