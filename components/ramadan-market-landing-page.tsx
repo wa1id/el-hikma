@@ -61,14 +61,16 @@ const RamadanMarketLandingPage = () => {
               Ramadan met familie en vrienden.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
-              <Button className="w-full sm:w-auto" data-umami-event="iftar-reservation-button">
-                <a
-                  href="https://www.eventbrite.be/e/ramadan-markt-2060-tickets-1278040987999"
-                  rel="noopener noreferrer"
-                  className="flex h-full w-full items-center justify-center"
-                >
-                  Reserveer of doneer een iftar
-                </a>
+              <Button
+                data-tally-open="wQk6MG"
+                data-tally-layout="modal"
+                data-tally-width="500"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
+                data-tally-auto-close="0"
+                data-umami-event="iftar-reservation-button"
+              >
+                Reserveer of doneer een iftar
               </Button>
               <Button
                 variant="link"
@@ -82,19 +84,6 @@ const RamadanMarketLandingPage = () => {
                 data-umami-event="volunteer-signup-button"
               >
                 Inschrijven als vrijwilliger
-              </Button>
-              <Button
-                variant="link"
-                className="text-secondary underline"
-                data-tally-open="mOkWlg"
-                data-tally-layout="modal"
-                data-tally-width="500"
-                data-tally-emoji-text="👋"
-                data-tally-emoji-animation="wave"
-                data-tally-auto-close="0"
-                data-umami-event="volunteer-signup-button"
-              >
-                Contacteer ons
               </Button>
             </div>
             <EventInfoCards />
