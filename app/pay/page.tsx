@@ -142,7 +142,7 @@ export default function PayPage() {
                 onClick={() => setSelectedMethod('ideal')}
               />
               <PaymentMethodCard 
-                name="Creditcard" 
+                name="VISA / Mastercard" 
                 icon="💳" 
                 selected={selectedMethod === 'creditcard'}
                 onClick={() => setSelectedMethod('creditcard')}
