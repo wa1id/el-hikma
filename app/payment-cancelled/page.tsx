@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { Suspense,useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 
-export default function PaymentCancelledPage() {
+function PaymentCancelledContent() {
   const [returnUrl, setReturnUrl] = useState('/');
   
   useEffect(() => {
@@ -97,5 +97,20 @@ export default function PaymentCancelledPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PaymentCancelledPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-beige flex items-center justify-center">
+        <div className="p-8 bg-white rounded-xl shadow-lg">
+          <h1 className="text-2xl font-bold text-amber-500 mb-4 text-center">Laden...</h1>
+          <p className="text-gray-600">Een moment geduld alstublieft.</p>
+        </div>
+      </div>
+    }>
+      <PaymentCancelledContent />
+    </Suspense>
   );
 } 

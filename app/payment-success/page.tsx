@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense,useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 
@@ -17,7 +17,7 @@ interface SessionDetails {
   tickets?: number;
 }
 
-export default function PaymentSuccessPage() {
+function PaymentSuccessContent() {
   const searchParams = useSearchParams();
   const sessionId = searchParams.get('session_id');
   const [orderDetails, setOrderDetails] = useState<SessionDetails | null>(null);
@@ -164,5 +164,20 @@ export default function PaymentSuccessPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function PaymentSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-beige flex items-center justify-center">
+        <div className="p-8 bg-white rounded-xl shadow-lg">
+          <h1 className="text-2xl font-bold text-green-500 mb-4 text-center">Laden...</h1>
+          <p className="text-gray-600">Een moment geduld alstublieft.</p>
+        </div>
+      </div>
+    }>
+      <PaymentSuccessContent />
+    </Suspense>
   );
 } 
